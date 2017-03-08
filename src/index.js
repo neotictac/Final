@@ -58,18 +58,22 @@ var App = React.createClass({
     // We should probably do the sorting and setting of movies in state here.
     // You should really look at https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
     if (view === 'latest') {
+      return (
         this.setState({
           movies: movieData.sort(this.movieCompareByReleased),
           currentView: view,
           currentMovie: null
-      });
+        })
+      )
     }
     if (view === 'alpha') {
+      return (
         this.setState({
           movies: movieData.sort(this.movieCompareByTitle),
           currentView: view,
           currentMovie: null
-        });
+        })
+      )
     } else {
       return (
         this.setState({
